@@ -70,7 +70,7 @@ def FetchAllUsers(conn):
 def FetchAllCards(conn):
     cursor = conn.cursor()
     rows = cursor.execute('SELECT * FROM Cards').fetchall()
-    print(Style.BRIGHT + Fore.GREEN + "Cards fetched successfully")  
+    print(Style.BRIGHT + Fore.GREEN + "Cards fetched successfully"+Style.RESET_ALL)  
     FormatedRows = [{"Cardid":row[0],"Userid":row[1],"Description":row[2]} for row in rows]
     
     for row in FormatedRows:
@@ -114,7 +114,7 @@ def UpdateCard(conn,cardid,description):
 def CommitAndClose(conn):
     conn.commit() 
     conn.close()
-    print(Style.BRIGHT + Fore.GREEN + "Database closed successfully")
+    print(Style.BRIGHT + Fore.GREEN + "Database closed successfully" + Style.RESET_ALL)
     
 #CreateDatabse()
 """InsertUser(conn,"user01","John Doe","Frontend Developer")
