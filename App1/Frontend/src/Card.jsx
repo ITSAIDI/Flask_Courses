@@ -15,7 +15,7 @@ function Card({ FullName, Description,Role,GetCards,CardId })
                 cardid: CardId
             }),
         }
-        await fetch("http://127.0.0.1:5000/delete_card", options);
+        await fetch("http://127.0.0.1:8888/delete_card", options);
         GetCards();
         
     }
