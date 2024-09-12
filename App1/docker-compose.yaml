@@ -1,6 +1,10 @@
 version: "3.8"
 services:
-  Frontend_raect :
-    build:
-  Backend_flask :
-    build:
+  frontend_react :
+    build: ./Frontend
+    ports:
+      - 5173:5173
+  backend_flask :
+    build: ./Backend
+    ports:
+      - 8888:8888
