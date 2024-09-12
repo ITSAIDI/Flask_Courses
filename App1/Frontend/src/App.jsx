@@ -9,9 +9,11 @@ function App() {
     const [FullName,setFullName] = useState("Friend Name");
     const [Role,setRole] = useState("Unknown");
     const [Description,setDescription] = useState("No Description");
+    const render_link = "https://flask-example-h396.onrender.com/"
+    //const link_locallhost = "http://127.0.0.1:8888/"
 
     async function getCards() {
-        const response = await fetch("http://127.0.0.1:8888/Cards");
+        const response = await fetch(render_link + "Cards");
         const response_json = await response.json();
         setCards(response_json);
     }
@@ -19,7 +21,7 @@ function App() {
 
     async function addCard() {
       // First we create a new User
-      const response =   await fetch("http://127.0.0.1:8888/create_user", {
+      const response =   await fetch(render_link + "create_user", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -30,7 +32,7 @@ function App() {
       const response_json = await response.json(); 
      
       // Then we create a new Card
-        await fetch("http://127.0.0.1:8888/create_card", {
+        await fetch(render_link + "create_card", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

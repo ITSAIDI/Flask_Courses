@@ -3,6 +3,9 @@
 
 function Card({ FullName, Description,Role,GetCards,CardId }) 
 {
+
+    const render_link = "https://flask-example-h396.onrender.com/"
+    //const link_locallhost = "http://127.0.0.1:8888/"
     async function DropCard()
     {
         
@@ -15,7 +18,7 @@ function Card({ FullName, Description,Role,GetCards,CardId })
                 cardid: CardId
             }),
         }
-        await fetch("http://127.0.0.1:8888/delete_card", options);
+        await fetch(render_link + "delete_card", options);
         GetCards();
         
     }
