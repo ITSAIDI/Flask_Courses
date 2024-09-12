@@ -10,7 +10,7 @@ CORS(app)
 
 # Backend Routes
 @app.route('/', methods=['GET'])
-def GetAllCards():
+def index():
     response = jsonify({"message":"Hi in This simple Flask Server"})
     return response,200
     
