@@ -9,6 +9,11 @@ CORS(app)
 
 
 # Backend Routes
+@app.route('/', methods=['GET'])
+def GetAllCards():
+    response = jsonify({"message":"Hi in This simple Flask Server"})
+    return response,200
+    
 @app.route('/Cards', methods=['GET'])
 def GetAllCards():
     conn = sqlite3.connect('Mydatabase.db')
